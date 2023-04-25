@@ -59,8 +59,8 @@ int print_dicimal(va_list list)
 		len = strlen(str_num);
 		printed = write(1, str_num, len);
 	}
-	
-	return(printed);
+
+	return (printed);
 }
 
 /**
@@ -81,8 +81,8 @@ int print_integer(va_list list)
 		len = strlen(str_num);
 		printed = write(1, str_num, len);
 	}
-	
-	return(printed);
+
+	return (printed);
 }
 
 /**
