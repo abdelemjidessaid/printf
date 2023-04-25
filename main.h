@@ -10,6 +10,7 @@
 /**** FUNCTIONS ****/
 int _putchar(char c);
 int _printf(const char *format, ...);
+int print_switcher(char c, va_list list);
 int print_character(va_list list);
 int print_string(va_list list);
 
