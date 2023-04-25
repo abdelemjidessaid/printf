@@ -67,7 +67,8 @@ int print_switcher(char c, va_list list)
 			printed += print_string(list);
 			break;
 		default:
-			printed = 0;
+			write(1, "%", 1);
+			printed += 1;
 	}
 	return (printed);
 }
