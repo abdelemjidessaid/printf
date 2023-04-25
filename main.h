@@ -13,5 +13,11 @@ int _printf(const char *format, ...);
 int print_switcher(char c, va_list list);
 int print_character(va_list list);
 int print_string(va_list list);
+char* itostr(int num);
+char *to_neg(char *str);
+char *dtos(double num, int precision);
+
+/**** MACROS ****/
+#define ABS(n) (n < 0 ? (-(n)) : (n))
 
 #endif /* _MAIN_H_ */
