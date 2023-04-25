@@ -8,6 +8,7 @@
 #include <unistd.h>
 
 /**** FUNCTIONS ****/
+int _putchar(char c);
 int _printf(const char *format, ...);
 int print_character(va_list list);
 int print_string(va_list list);
