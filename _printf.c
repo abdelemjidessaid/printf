@@ -11,7 +11,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int printed = 0, i, len, arg_ind = 0;
+	int printed = 0, i, len;
 	va_list list;
 
 	if (format == NULL)
@@ -30,24 +30,8 @@ int _printf(const char *format, ...)
 		{
 			if (i + 1 < len)
 			{
-				switch (format[i + 1])
-				{
-					case '%':
-						write(1, &format[i + 1], 1);
-						printed++;
-						i += 1;
-						break;
-					case 'c':
-						printed += print_character(list);
-						i += 1;
-						break;
-					case 's':
-						printed += print_string(list);
-						i += 1;
-						break;
-					default:
-						i += 1;
-				}
+				printed += print_switcher(format[i + 1], list);
+				i += 1;
 			}
 		}
 	}
@@ -55,3 +39,4 @@ int _printf(const char *format, ...)
 
 	return (printed);
 }
+

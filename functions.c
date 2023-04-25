@@ -43,3 +43,31 @@ int print_string(va_list list)
 
 	return (printed);
 }
+
+/**
+ * print_switcher - function that handle the data type to print it.
+ * @c: the character that specifies the type of data.
+ * @list: array of char pointer that contains the arguments.
+ * Return: the number of bytes that is printed.
+ */
+int print_switcher(char c, va_list list)
+{
+	int printed = 0;
+
+	switch (c)
+	{
+		case '%':
+			write(1, "%", 1);
+			printed += 1;
+			break;
+		case 'c':
+			printed += print_character(list);
+			break;
+		case 's':
+			printed += print_string(list);
+			break;
+		default:
+			printed = 0;
+	}
+	return (printed);
+}
