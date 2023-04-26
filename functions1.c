@@ -10,6 +10,8 @@ char *itostr(int num)
 	int temp = num, digits = 0, i;
 	char *str;
 
+	if (num == 0)
+		return ("0");
 	while (temp != 0)
 	{
 		digits++;
