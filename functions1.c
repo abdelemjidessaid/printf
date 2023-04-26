@@ -5,9 +5,9 @@
  * @num: the number that should convert.
  * Return: char pointer contains the given number.
  */
-char *itostr(int num)
+char *itostr(long int num)
 {
-	int temp = num, digits = 0, i;
+	long int temp = num, digits = 0, i;
 	char *str;
 
 	if (num == 0)
@@ -27,9 +27,8 @@ char *itostr(int num)
 	i = digits - 1;
 	while (num != 0)
 	{
-		str[i] = '0' + num % 10;
+		str[i--] = '0' + num % 10;
 		num /= 10;
-		i--;
 	}
 	str[digits] = '\0';
 

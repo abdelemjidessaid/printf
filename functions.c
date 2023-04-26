@@ -70,7 +70,7 @@ int print_integer(va_list list)
 {
 	int printed = 0, len;
 	int num = va_arg(list, int);
-	char *str_num = itostr(num);
+	char *str_num = itostr((long int) num);
 
 	if (str_num != NULL)
 	{
