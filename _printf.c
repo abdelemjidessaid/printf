@@ -8,10 +8,10 @@
  */
 int _printf(const char *format, ...)
 {
-	int printed = 0, i, len;
+	int printed = 0, i, len, ret;
 	va_list list;
 
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL)
 		return (-1);
 
 	len = strlen(format);
@@ -27,9 +27,15 @@ int _printf(const char *format, ...)
 		{
 			if (i + 1 < len)
 			{
-				printed += print_switcher(format[i + 1], list);
+				ret = print_switcher(format[i + 1], list);
+				if (ret < 0)
+					printed = ret;
+				else
+					printed += ret;
 				i += 1;
 			}
+			else
+				printed = -1;
 		}
 	}
 	va_end(list);

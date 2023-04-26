@@ -94,20 +94,19 @@ int print_switcher(char c, va_list list)
 	switch (c)
 	{
 		case '%':
-			write(1, "%", 1);
-			printed += 1;
+			printed = write(1, "%", 1);
 			break;
 		case 'c':
-			printed += print_character(list);
+			printed = print_character(list);
 			break;
 		case 's':
-			printed += print_string(list);
+			printed = print_string(list);
 			break;
 		case 'd':
-			printed += print_integer(list);
+			printed = print_integer(list);
 			break;
 		case 'i':
-			printed += print_integer(list);
+			printed = print_integer(list);
 			break;
 		default:
 			write(1, "%", 1);
