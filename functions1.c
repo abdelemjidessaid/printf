@@ -91,7 +91,7 @@ char *dtos(double num, int precision)
 {
 	int sign = (num < 0), int_part, i = 0, j, digit;
 	double frac_part;
-	char *str = calloc(1024, sizeof(char));
+	char *str = calloc(BUF_SIZE sizeof(char));
 
 	if (sign)
 		num = -num;

@@ -11,10 +11,9 @@ int print_character(va_list list)
 {
 	int printed = 0;
 	char c = va_arg(list, int);
-	char *p = &c;
 
-	if (p != NULL)
-		printed = write(1, p, 1);
+	if (c != '\0')
+		printed = write(1, &c, 1);
 	else
 		printed = 0;
 

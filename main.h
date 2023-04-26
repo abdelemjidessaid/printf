@@ -19,5 +19,6 @@ char *dtos(double num, int precision);
 
 /**** MACROS ****/
 #define ABS(n) (n < 0 ? (-(n)) : (n))
+#define BUF_SIZE 1024
 
 #endif /* _MAIN_H_ */
