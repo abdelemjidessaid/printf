@@ -12,10 +12,7 @@ int print_character(va_list list)
 	int printed = 0;
 	char c = va_arg(list, int);
 
-	if (c != '\0')
-		printed = write(1, &c, 1);
-	else
-		printed = 0;
+	printed = write(1, &c, 1);
 
 	return (printed);
 }
