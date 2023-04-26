@@ -33,6 +33,8 @@ int print_string(va_list list)
 		len = strlen(string);
 		printed += write(1, &string[0], len);
 	}
+	else
+		printed += write(1, "(null)", 6);
 
 	return (printed);
 }
