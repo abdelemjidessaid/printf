@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	int printed = 0, i, len;
 	va_list list;
 
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 	len = strlen(format);
