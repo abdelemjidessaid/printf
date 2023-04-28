@@ -32,10 +32,10 @@ int print_unsigned(va_list list)
 
 	buf = calloc(BUF_SIZE, sizeof(char));
 	if (!buf)
-		return ("0");
+		return (0);
 	buf = itostr((long int) num);
 	if (!buf)
-		return ("0");
+		return (0);
 	len = strlen(buf);
 	printed = write(1, buf, len);
 
