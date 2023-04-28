@@ -11,7 +11,7 @@ char *num_to_octal(unsigned int num)
 	char *buf;
 
 	buf = calloc(BUF_SIZE, sizeof(char));
-	if (!buf)
+	if (!buf || num == 0)
 		return ("0");
 	while (num > 0)
 	{
