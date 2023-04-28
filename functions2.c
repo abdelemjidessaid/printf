@@ -18,3 +18,26 @@ int print_binary(va_list list)
 
 	return (printed);
 }
+
+/**
+ * print_unsigned - function that prints unsigned number.
+ * @list: array of arguments.
+ * Return: number of bytes printed.
+ */
+int print_unsigned(va_list list)
+{
+	int printed = 0, len;
+	unsigned int num = va_arg(list, unsigned int);
+	char *buf;
+
+	buf = calloc(BUF_SIZE, sizeof(char));
+	if (!buf)
+		return ("0");
+	buf = itostr((long int) num);
+	if (!buf)
+		return ("0");
+	len = strlen(buf);
+	printed = write(1, buf, len);
+
+	return (printed);
+}

@@ -20,6 +20,8 @@ char *to_neg(char *str);
 char *dtos(double num, int precision);
 char *num_to_bin(unsigned int num);
 int print_binary(va_list list);
+int print_unsigned(va_list list);
+
 
 /**** MACROS ****/
 #define ABS(n) (n < 0 ? (-(n)) : (n))
