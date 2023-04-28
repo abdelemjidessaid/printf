@@ -11,7 +11,7 @@ char *num_to_bin(unsigned int num)
 	int i = 0;
 
 	binary = calloc(BUF_SIZE, sizeof(char));
-	if (!binary)
+	if (!binary || num == 0)
 		return ("0");
 	while (num > 0)
 	{
