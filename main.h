@@ -21,6 +21,8 @@ char *dtos(double num, int precision);
 char *num_to_bin(unsigned int num);
 int print_binary(va_list list);
 int print_unsigned(va_list list);
+char *num_to_octal(unsigned int num);
+int print_octal(va_list list);
 
 
 /**** MACROS ****/

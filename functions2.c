@@ -41,3 +41,23 @@ int print_unsigned(va_list list)
 
 	return (printed);
 }
+
+/**
+ * print_octal - function that prints number as octal
+ * @list: array of arguments.
+ * Return: number of bytes that is printed.
+*/
+int print_octal(va_list list)
+{
+	int printed = 0, len;
+	long int num = va_arg(list, long int);
+	char *buf;
+
+	buf = calloc(BUF_SIZE, sizeof(char));
+	if (!buf)
+		return (0);
+	buf = num_to_octal((unsigned int) num);
+	len = strlen(buf);
+	printed = write(1, buf, len);
+	return (printed);
+}
