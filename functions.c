@@ -110,6 +110,9 @@ int print_switcher(char c, va_list list)
 		case 'i':
 			printed = print_integer(list);
 			break;
+		case 'b':
+			printed = print_binary(list);
+			break;
 		default:
 			write(1, "%", 1);
 			write(1, &c, 1);

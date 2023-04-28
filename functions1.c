@@ -1,6 +1,30 @@
 #include "main.h"
 
 /**
+ * num_to_bin - function that converts integer to binary code.
+ * @num: integer number.
+ * Return: char string contains the binary code.
+ */
+char *num_to_bin(int num)
+{
+	char *binary;
+	int i = 0;
+
+	num = ABS(num);
+	binary = calloc(BUF_SIZE, sizeof(char));
+
+	while (num > 0)
+	{
+		binary[i++] = (num % 2) + '0';
+		num /= 2;
+	}
+	binary[i] = '\0';
+	strrev(binary);
+
+	return (binary);
+}
+
+/**
  * itostr - function that converts from long long int to string.
  * @num: the number that should convert.
  * Return: char pointer contains the given number.
