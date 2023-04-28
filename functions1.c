@@ -5,14 +5,14 @@
  * @num: integer number.
  * Return: char string contains the binary code.
  */
-char *num_to_bin(int num)
+char *num_to_bin(unsigned int num)
 {
 	char *binary;
 	int i = 0;
 
-	num = ABS(num);
 	binary = calloc(BUF_SIZE, sizeof(char));
-
+	if (!binary)
+		return ("0");
 	while (num > 0)
 	{
 		binary[i++] = (num % 2) + '0';

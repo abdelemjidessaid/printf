@@ -7,10 +7,9 @@
  */
 int print_binary(va_list list)
 {
-	int num = va_arg(list, int), printed = 0, len;
+	unsigned int num = va_arg(list, unsigned int), printed = 0, len;
 	char *binary = calloc((size_t) BUF_SIZE, sizeof(char));
 
-	num = ABS(num);
 	binary = num_to_bin(num);
 	if (!binary)
 		return (0);

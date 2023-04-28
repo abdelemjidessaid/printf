@@ -18,7 +18,7 @@ void strrev(char *str);
 char *itostr(long int num);
 char *to_neg(char *str);
 char *dtos(double num, int precision);
-char *num_to_bin(int num);
+char *num_to_bin(unsigned int num);
 int print_binary(va_list list);
 
 /**** MACROS ****/
