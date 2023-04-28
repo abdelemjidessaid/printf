@@ -116,6 +116,9 @@ int print_switcher(char c, va_list list)
 		case 'u':
 			printed = print_unsigned(list);
 			break;
+		case 'o':
+			printed = print_octal(list);
+			break;
 		default:
 			write(1, "%", 1);
 			write(1, &c, 1);
